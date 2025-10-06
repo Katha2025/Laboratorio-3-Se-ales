@@ -116,13 +116,9 @@ fig.tight_layout(); plt.show()
 ```
 **Gráficas obtenidas**
 
-**Mujeres**
-
 <img width="1211" height="545" alt="image" src="https://github.com/user-attachments/assets/4abbcc6e-f149-400e-b8fa-31fe5e3b2f01" />
 
 <img width="1197" height="274" alt="image" src="https://github.com/user-attachments/assets/7885e7fa-3e5d-434d-b58c-595f7f150f32" />
-
-**Hombres**
 
 <img width="1193" height="539" alt="image" src="https://github.com/user-attachments/assets/21cd5149-28e0-4356-86be-eeae68870858" />
 
