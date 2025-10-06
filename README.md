@@ -76,8 +76,16 @@ Ahora bien, en esta parte se seleccionó una grabación de voz masculina y una f
 
 # Parte C
 Finalmente, en esta parte se compararon los resultados obtenidos entre las voces masculinas y femeninas. Se observaron diferencias notables en la frecuencia fundamental, siendo más alta en las voces femeninas debido a la anatomía de las cuerdas vocales, mientras que las masculinas presentaron frecuencias más bajas y mayor energía en las componentes graves. También se analizaron parámetros como el brillo, la intensidad, el jitter y el shimmer, encontrando variaciones asociadas a la estabilidad y calidad vocal. Finalmente, se discutió la relevancia clínica de estos parámetros, ya que valores elevados de jitter o shimmer pueden indicar alteraciones en la voz o fatiga vocal. Esta comparación permitió comprender cómo las características espectrales reflejan diferencias fisiológicas y funcionales entre los géneros.
+
+
 **¿Qué diferencias se observan en la frecuencia fundamental?**
+
+
 **¿Qué otras diferencias notan en términos de brillo, media o intensidad?**
+
+
 **Conclusiones sobre el comportamiento de la voz en hombres y
 mujeres a partir de los análisis realizados.**
+
+
 **Importancia clínica del jitter y shimmer en el análisis de la voz.**
