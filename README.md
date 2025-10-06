@@ -5,7 +5,7 @@ En esta práctica se trabajaron conceptos fundamentales del procesamiento digita
 # Parte A
 En primer lugar se realizaron las grabaciones de seis personas, tres hombres y tres mujeres, pronunciando la misma frase y cada archivo se guardó en formato .wav con nombres identificadores. Luego, las señales fueron importadas a Python, donde se graficaron en el dominio del tiempo para observar su forma de onda. Posteriormente, se aplicó la Transformada de Fourier a cada una de las grabaciones, obteniendo el espectro de magnitud y permitiendo identificar las componentes principales de frecuencia. Finalmente, se calcularon parámetros como la frecuencia fundamental, frecuencia media, brillo e intensidad, los cuales sirvieron como base para el análisis comparativo entre voces masculinas y femeninas.
 
-**Graficado de la señales captadas**
+**Graficado de la señales captadas en el dominio del tiempo**
 
 ```python
 import numpy as np
@@ -136,7 +136,8 @@ for ax, (titulo, F, X) in zip(axes, espectros):
 axes[-1].set_xlabel('Frecuencia (Hz)')
 fig.tight_layout(); plt.show()
 ```
-**Gráficas obtenidas**
+
+**Gráficas del espectro de Fourier de magnitudes frecuenciales**
 
 <img width="1211" height="545" alt="image" src="https://github.com/user-attachments/assets/4abbcc6e-f149-400e-b8fa-31fe5e3b2f01" />
 
