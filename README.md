@@ -65,10 +65,10 @@ plt.ylabel('Bits')
 axs[5].plot(Tiempo6,signal6)
 axs[5].set_title("Hombre 3")
 plt.ylabel('Bits')
-```
+
 plt.tight_layout()
 plt.show()
-
+```
 
 **Aplicación de la Transformada de Fourier**
 
@@ -112,7 +112,6 @@ for ax, (titulo, F, X) in zip(axes, espectros):
     ax.set_ylabel('Amplitud')
     ax.grid(True, which='both', linestyle='--', alpha=0.6)
 axes[-1].set_xlabel('Frecuencia (Hz)')
-
 fig.tight_layout(); plt.show()
 ```
 # Parte B
