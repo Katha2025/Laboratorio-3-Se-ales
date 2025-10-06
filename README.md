@@ -263,6 +263,89 @@ plt.show()
 
 <img width="1210" height="585" alt="image" src="https://github.com/user-attachments/assets/47ece3d0-8e02-4e04-8295-856043f05066" />
 
+**Medición de Jitter y Shimmer**
+
+```python
+mport numpy as np
+from scipy.signal import butter, sosfiltfilt, find_peaks
+
+def bandpass_butter(x, fs, f_low, f_high, order=4):
+    nyq = fs / 2.0
+    wn = [f_low/nyq, f_high/nyq]
+    sos = butter(order, wn, btype='bandpass', output='sos')
+    return sosfiltfilt(sos, x)
+
+def jitter_shimmer(x, fs, sexo='hombre'):
+    if sexo.lower().startswith('h'):
+        x_f = bandpass_butter(x, fs, 80, 400, order=4)
+        F0_min, F0_max = 80, 200
+    else:
+        x_f = bandpass_butter(x, fs, 150, 500, order=4)
+        F0_min, F0_max = 150, 300
+
+    x_f = x_f - np.mean(x_f)
+    sigma = np.std(x_f)
+
+
+    dist_min = int(fs / F0_max)
+    peaks, _ = find_peaks(x_f, distance=dist_min, prominence=0.1*sigma)
+
+    if len(peaks) < 3:
+        raise ValueError("Muy pocos picos detectados. Ajusta filtros/prominence o usa un segmento más estable.")
+
+    t = peaks / fs
+    T = np.diff(t)
+
+
+    Tmin, Tmax = 1.0/F0_max, 1.0/F0_min
+    mask = (T >= Tmin) & (T <= Tmax)
+    T = T[mask]
+
+
+    A = x_f[peaks].astype(float)
+    A = A[:len(T)+1]
+    dT = np.abs(np.diff(T))
+    dA = np.abs(np.diff(A))
+
+    if len(dT) == 0 or len(dA) == 0:
+        raise ValueError("No hay suficientes ciclos válidos tras filtrar outliers.")
+
+    jitter_abs = np.mean(dT)
+    jitter_rel = (jitter_abs / np.mean(T)) * 100.0
+
+    shimmer_abs = np.mean(dA)
+    shimmer_rel = (shimmer_abs / np.mean(A)) * 100.0
+
+    resultados = {
+        "N_ciclos": len(T)+1,
+        "Jitter_abs_s": jitter_abs,
+        "Jitter_rel_%": jitter_rel,
+        "Shimmer_abs": shimmer_abs,
+        "Shimmer_rel_%": shimmer_rel,
+        "peaks_idx": peaks,
+        "x_filtrada": x_f
+    }
+    return resultados
+# hombre:
+res_h1 = jitter_shimmer(signal4, fs4, sexo='hombre')
+print("Hombre 1: ", res_h1["Jitter_abs_s"], res_h1["Jitter_rel_%"], res_h1["Shimmer_abs"], res_h1["Shimmer_rel_%"])
+res_h2 = jitter_shimmer(signal5, fs5, sexo='hombre')
+print("Hombre 2: ", res_h2["Jitter_abs_s"], res_h2["Jitter_rel_%"], res_h2["Shimmer_abs"], res_h2["Shimmer_rel_%"])
+res_h3 = jitter_shimmer(signal6, fs6, sexo='hombre')
+print("Hombre 3: ", res_h3["Jitter_abs_s"], res_h3["Jitter_rel_%"], res_h3["Shimmer_abs"], res_h3["Shimmer_rel_%"])
+
+# mujer:
+res_m1 = jitter_shimmer(signal1, fs1, sexo='mujer')
+print("Mujer 1: ",res_m1["Jitter_abs_s"], res_m1["Jitter_rel_%"], res_m1["Shimmer_abs"], res_m1["Shimmer_rel_%"])
+res_m2 = jitter_shimmer(signal2, fs2, sexo='mujer')
+print("Mujer 2: ",res_m2["Jitter_abs_s"], res_m2["Jitter_rel_%"], res_m2["Shimmer_abs"], res_m2["Shimmer_rel_%"])
+res_m3 = jitter_shimmer(signal3, fs3, sexo='mujer')
+print("Mujer 1: ",res_m3["Jitter_abs_s"], res_m3["Jitter_rel_%"], res_m3["Shimmer_abs"], res_m3["Shimmer_rel_%"])
+
+```
+
+<img width="708" height="113" alt="image" src="https://github.com/user-attachments/assets/2371db95-a71d-45ac-8cee-7187cc0dd1cf" />
+
 
 # Parte C
 Finalmente, en esta parte se compararon los resultados obtenidos entre las voces masculinas y femeninas, se observaron diferencias notables en la frecuencia fundamental, siendo más alta en las voces femeninas debido a la anatomía de las cuerdas vocales, mientras que las masculinas presentaron frecuencias más bajas y mayor energía en las componentes graves. También se analizaron parámetros como el brillo, la intensidad, el jitter y el shimmer, encontrando variaciones asociadas a la estabilidad y calidad vocal. Finalmente, se discutió la relevancia clínica de estos parámetros, ya que valores elevados de jitter o shimmer pueden indicar alteraciones en la voz o fatiga vocal. Esta comparación permitió comprender cómo las características espectrales reflejan diferencias fisiológicas y funcionales entre los géneros.
