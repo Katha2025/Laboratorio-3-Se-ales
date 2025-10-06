@@ -158,7 +158,6 @@ from scipy.signal import find_peaks
 
 
 def _to_mono_float(x):
-    """Convierte una señal a 1D float y quita el componente DC."""
     x = np.asarray(x)
     if x.ndim > 1:  
         x = x.mean(axis=1)
@@ -167,7 +166,6 @@ def _to_mono_float(x):
     return x
 
 def analizar_senal(signal, fs):
-    """Calcula frecuencia fundamental, frecuencia media, brillo e intensidad."""
     sig = _to_mono_float(signal)
     N = len(sig)
     if N == 0 or fs <= 0:
