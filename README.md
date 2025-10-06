@@ -70,7 +70,51 @@ plt.tight_layout()
 plt.show()
 
 
+**Aplicación de la Transformada de Fourier**
 
+
+```python
+senales = [
+    ("Mujer 1", signal1, fs1),
+    ("Mujer 2", signal2, fs2),
+    ("Mujer 3", signal3, fs3),
+    ("Hombre 1", signal4, fs4),
+    ("Hombre 2", signal5, fs5),
+    ("Hombre 3", signal6, fs6)
+]
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(
+    nrows=len(senales), ncols=1,
+    figsize=(12, 2.8*len(senales)),
+    sharex=True
+)
+
+fny_comun = min(fs/2 for _, _, fs in senales)
+ymax = 0.0
+espectros = []
+
+for (titulo, senal, fs) in senales:
+    N = len(senal)
+    freqs = np.fft.rfftfreq(N, 1/fs)
+    espectro = np.abs(np.fft.rfft(senal))
+    idx = freqs <= fny_comun
+    espectros.append((titulo, freqs[idx], espectro[idx]))
+    ymax = max(ymax, espectro[idx].max())
+
+for ax, (titulo, F, X) in zip(axes, espectros):
+    Fp = F[1:]
+    Xp = X[1:]
+    ax.semilogx(Fp, Xp)
+    ax.set_title(titulo)
+    ax.set_ylabel('Amplitud')
+    ax.grid(True, which='both', linestyle='--', alpha=0.6)
+axes[-1].set_xlabel('Frecuencia (Hz)')
+
+fig.tight_layout(); plt.show()
+```
 # Parte B
 Ahora bien, en esta parte se seleccionó una grabación de voz masculina y una femenina para realizar un análisis más detallado de estabilidad vocal. Primero, se aplicó un filtro pasa-banda en el rango correspondiente a cada género (80–400 Hz para hombres y 150–500 Hz para mujeres) con el fin de eliminar ruidos externos y conservar únicamente las frecuencias relevantes de la voz. Luego, se calculó el jitter, que representa la variación en la frecuencia fundamental entre ciclos consecutivos, y el shimmer, que mide la variación en la amplitud, para ello se detectaron los periodos y los picos de cada señal, obteniendo tanto los valores absolutos como los relativos de cada parámetro. Finalmente, se registraron los resultados para todas las grabaciones, lo que permitió comparar la estabilidad vocal entre hombres y mujeres y analizar posibles diferencias en la regularidad de sus señales.
 
