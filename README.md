@@ -83,6 +83,15 @@ plt.tight_layout()
 plt.show()
 ```
 
+**Gráficas de las señales**
+
+
+<img width="1391" height="669" alt="image" src="https://github.com/user-attachments/assets/aad52399-4cb8-4b81-ba97-193ee7769408" />
+
+
+<img width="1391" height="324" alt="image" src="https://github.com/user-attachments/assets/2a7d231d-8984-4098-9d8f-fbae8637e094" />
+
+
 **Aplicación de la Transformada de Fourier**
 
 
