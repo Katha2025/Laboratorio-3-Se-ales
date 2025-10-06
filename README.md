@@ -22,49 +22,62 @@ fs4,signal4=  wavfile.read('/Hombre-1.wav')
 fs5,signal5= wavfile.read('/Hombre-2.wav')
 fs6,signal6= wavfile.read('/Hombre-3.wav')
 
+
 duracion = len(signal1)/fs1
-Tiempo1 = np.arange(0,duracion,1/fs1)
+
 duracion = len(signal2)/fs1
-Tiempo2 = np.arange(0,duracion,1/fs2)
+
 duracion = len(signal3)/fs1
-Tiempo3 = np.arange(0,duracion,1/fs3)
+
 
 
 duracion = len(signal4)/fs1
-Tiempo4 = np.arange(0,duracion,1/fs4)
-duracion = len(signal5)/fs1
-Tiempo5 = np.arange(0,duracion,1/fs5)
-duracion = len(signal6)/fs1
-Tiempo6 = np.arange(0,duracion,1/fs6)
 
+duracion = len(signal5)/fs1
+
+duracion = len(signal6)/fs1
+
+
+Tiempo1 = np.arange(len(signal1)) / fs1
+Tiempo2 = np.arange(len(signal2)) / fs2
+Tiempo3 = np.arange(len(signal3)) / fs3
+Tiempo4 = np.arange(len(signal4)) / fs4
+Tiempo5 = np.arange(len(signal5)) / fs5
+Tiempo6 = np.arange(len(signal6)) / fs6
 fig, axs = plt.subplots(6,1, figsize=(14,10),sharex=False)
 
 print(len(Tiempo3),len(signal3))
+
 # graficas
-axs[0].plot(Tiempo1,signal1)
+axs[0].plot(Tiempo1, signal1)
 axs[0].set_title("Mujer 1")
-plt.xlabel('Tiempo (s)')
-plt.ylabel('Bits')
+axs[0].set_ylabel('Bits')
+axs[0].set_xlabel('Tiempo (s)')
 
-axs[1].plot(Tiempo2,signal2)
+axs[1].plot(Tiempo2, signal2)
 axs[1].set_title("Mujer 2")
-plt.ylabel('Bits')
+axs[1].set_ylabel('Bits')
+axs[1].set_xlabel('Tiempo (s)')
 
-axs[2].plot(Tiempo3[0:-1],signal3)
+axs[2].plot(Tiempo3, signal3)
 axs[2].set_title("Mujer 3")
-plt.ylabel('Bits')
+axs[2].set_ylabel('Bits')
+axs[2].set_xlabel('Tiempo (s)')
 
-axs[3].plot(Tiempo4,signal4)
+axs[3].plot(Tiempo4, signal4)
 axs[3].set_title("Hombre 1")
-plt.ylabel('Bits')
+axs[3].set_ylabel('Bits')
+axs[3].set_xlabel('Tiempo (s)')
 
-axs[4].plot(Tiempo5,signal5)
+axs[4].plot(Tiempo5, signal5)
 axs[4].set_title("Hombre 2")
-plt.ylabel('Bits')
+axs[4].set_ylabel('Bits')
+axs[4].set_xlabel('Tiempo (s)')
 
-axs[5].plot(Tiempo6,signal6)
+axs[5].plot(Tiempo6, signal6)
 axs[5].set_title("Hombre 3")
-plt.ylabel('Bits')
+axs[5].set_ylabel('Bits')
+axs[5].set_xlabel('Tiempo (s)')
 
 plt.tight_layout()
 plt.show()
