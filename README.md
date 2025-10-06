@@ -220,6 +220,44 @@ print(tabla.to_string(index=False))
 # Parte B
 Ahora bien, en esta parte se seleccionó una grabación de voz masculina y una femenina para realizar un análisis más detallado de estabilidad vocal. Primero, se aplicó un filtro pasa-banda en el rango correspondiente a cada género (80–400 Hz para hombres y 150–500 Hz para mujeres) con el fin de eliminar ruidos externos y conservar únicamente las frecuencias relevantes de la voz. Luego, se calculó el jitter, que representa la variación en la frecuencia fundamental entre ciclos consecutivos, y el shimmer, que mide la variación en la amplitud, para ello se detectaron los periodos y los picos de cada señal, obteniendo tanto los valores absolutos como los relativos de cada parámetro. Finalmente, se registraron los resultados para todas las grabaciones, lo que permitió comparar la estabilidad vocal entre hombres y mujeres y analizar posibles diferencias en la regularidad de sus señales.
 
+**Filtro pasabandas**
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.signal import butter, filtfilt
+
+def filtro_pasabanda(x, fs, lowcut, highcut):
+  nyq = 0.5 * fs
+  low= lowcut/ nyq
+  high = highcut / nyq
+  b, a= butter(4, [low, high], btype='band')
+  return filtfilt(b, a, x)
+
+mujer1_filtrada= filtro_pasabanda(signal1, fs3, 150, 500)
+
+hombre3_filtrada= filtro_pasabanda(signal6, fs6, 80, 400)
+
+plt.figure(figsize=(12,6))
+
+plt.subplot(2,1,1)
+plt.plot(signal1, color='tab:pink', label="Original mujer")
+plt.plot(mujer1_filtrada, color='tab:blue', label="Filtrada mujer")
+plt.title("Mujer 1")
+plt.xlabel("Tiempo [s]")
+plt.ylabel("Amplitud")
+plt.legend()
+
+plt.subplot(2,1,2)
+plt.plot(signal6, color='tab:cyan', label="Original hombre")
+plt.plot(hombre3_filtrada, color='tab:purple', label="Filtrada hombre")
+plt.title("Hombre 3")
+plt.xlabel("Tiempo [s]")
+plt.ylabel("Amplitud")
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+<img width="1210" height="585" alt="image" src="https://github.com/user-attachments/assets/47ece3d0-8e02-4e04-8295-856043f05066" />
 
 
 # Parte C
