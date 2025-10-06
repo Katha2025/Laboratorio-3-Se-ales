@@ -66,3 +66,13 @@ plt.ylabel('Bits')
 ```
 plt.tight_layout()
 plt.show()
+
+
+
+# Parte B
+Ahora bien, en esta parte se seleccionó una grabación de voz masculina y una femenina para realizar un análisis más detallado de estabilidad vocal. Primero, se aplicó un filtro pasa-banda en el rango correspondiente a cada género (80–400 Hz para hombres y 150–500 Hz para mujeres) con el fin de eliminar ruidos externos y conservar únicamente las frecuencias relevantes de la voz. Luego, se calculó el jitter, que representa la variación en la frecuencia fundamental entre ciclos consecutivos, y el shimmer, que mide la variación en la amplitud, para ello se detectaron los periodos y los picos de cada señal, obteniendo tanto los valores absolutos como los relativos de cada parámetro. Finalmente, se registraron los resultados para todas las grabaciones, lo que permitió comparar la estabilidad vocal entre hombres y mujeres y analizar posibles diferencias en la regularidad de sus señales.
+
+
+
+# Parte C
+Finalmente, en esta parte se compararon los resultados obtenidos entre las voces masculinas y femeninas. Se observaron diferencias notables en la frecuencia fundamental, siendo más alta en las voces femeninas debido a la anatomía de las cuerdas vocales, mientras que las masculinas presentaron frecuencias más bajas y mayor energía en las componentes graves. También se analizaron parámetros como el brillo, la intensidad, el jitter y el shimmer, encontrando variaciones asociadas a la estabilidad y calidad vocal. Finalmente, se discutió la relevancia clínica de estos parámetros, ya que valores elevados de jitter o shimmer pueden indicar alteraciones en la voz o fatiga vocal. Esta comparación permitió comprender cómo las características espectrales reflejan diferencias fisiológicas y funcionales entre los géneros.
