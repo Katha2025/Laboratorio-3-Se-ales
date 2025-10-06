@@ -150,21 +150,24 @@ fig.tight_layout(); plt.show()
 
 **Características de la señal**
 
-```
+```python
 import numpy as np
 import pandas as pd
 from numpy.fft import rfft, rfftfreq
 from scipy.signal import find_peaks
 
+
 def _to_mono_float(x):
+    """Convierte una señal a 1D float y quita el componente DC."""
     x = np.asarray(x)
-    if x.ndim > 1:  # Si la señal es estéreo, la convierte a mono
+    if x.ndim > 1:  
         x = x.mean(axis=1)
     x = x.astype(np.float32)
-    x = x - x.mean()  # Quita el componente DC
+    x = x - x.mean()  
     return x
 
 def analizar_senal(signal, fs):
+    """Calcula frecuencia fundamental, frecuencia media, brillo e intensidad."""
     sig = _to_mono_float(signal)
     N = len(sig)
     if N == 0 or fs <= 0:
@@ -173,14 +176,14 @@ def analizar_senal(signal, fs):
     X = np.abs(rfft(sig))
     f = rfftfreq(N, d=1.0/fs)
 
-#Frecuencia fundamental
-    mask = f >= 50.0  # Evita DC y ruidos bajos
+    #Frecuencia fundamental
+    mask = f >= 50.0 
     Xb = X[mask]
     fb = f[mask]
     if Xb.size and Xb.max() > 0:
         peaks, _ = find_peaks(Xb, height=0.10 * Xb.max())
         if peaks.size:
-            f0 = float(fb[peaks[np.argmax(Xb[peaks])]])  # Pico más alto
+            f0 = float(fb[peaks[np.argmax(Xb[peaks])]])  #Pico más alto
         else:
             f0 = 0.0
     else:
@@ -211,6 +214,7 @@ for nom, sig, fs in zip(nombres, senales, fs_list):
 
 tabla = pd.DataFrame(resultados, columns=["Señal","f0 (Hz)","f_media (Hz)","Brillo","Intensidad"])
 print(tabla.to_string(index=False))
+
 ```
 <img width="353" height="108" alt="Captura de pantalla 2025-10-06 181855" src="https://github.com/user-attachments/assets/6c5a9a8e-ee83-4daa-b619-68c4da652f01" />
 
