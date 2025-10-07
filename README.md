@@ -216,7 +216,7 @@ print(tabla.to_string(index=False))
 ```
 <img width="353" height="108" alt="Captura de pantalla 2025-10-06 181855" src="https://github.com/user-attachments/assets/6c5a9a8e-ee83-4daa-b619-68c4da652f01" />
 
-
+<br>
 
 <img width="341" height="896" alt="image" src="https://github.com/user-attachments/assets/9f4021fc-ff94-4deb-bf7c-3fe221d92b46" />
 
