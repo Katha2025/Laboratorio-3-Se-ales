@@ -349,7 +349,8 @@ print("Mujer 1: ",res_m3["Jitter_abs_s"], res_m3["Jitter_rel_%"], res_m3["Shimme
 ```
 
 <img width="708" height="113" alt="image" src="https://github.com/user-attachments/assets/2371db95-a71d-45ac-8cee-7187cc0dd1cf" />
-
+<br>
+<img width="225" height="618" alt="image" src="https://github.com/user-attachments/assets/9a8611d9-228b-4203-9eb9-4be8178d7b3e" />
 
 # Parte C
 Finalmente, en esta parte se compararon los resultados obtenidos entre las voces masculinas y femeninas, se observaron diferencias notables en la frecuencia fundamental, siendo más alta en las voces femeninas debido a la anatomía de las cuerdas vocales, mientras que las masculinas presentaron frecuencias más bajas y mayor energía en las componentes graves. También se analizaron parámetros como el brillo, la intensidad, el jitter y el shimmer, encontrando variaciones asociadas a la estabilidad y calidad vocal. Finalmente, se discutió la relevancia clínica de estos parámetros, ya que valores elevados de jitter o shimmer pueden indicar alteraciones en la voz o fatiga vocal. Esta comparación permitió comprender cómo las características espectrales reflejan diferencias fisiológicas y funcionales entre los géneros.
