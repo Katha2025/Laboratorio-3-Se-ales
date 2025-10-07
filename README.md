@@ -356,9 +356,11 @@ Finalmente, en esta parte se compararon los resultados obtenidos entre las voces
 
 **¿Qué otras diferencias notan en términos de brillo, media o intensidad?**
 
+Entre los audios de los hombres, la frecuencia media tiende a ser mucho más variada que entre los audios de las mujeres. Los audios de las mujeres se quedaron dentro del rango de 3.1k - 3.8k Hz, mientras que los de los hombres tuvieron un rango mucho más grande de 2.8k - 5.4k Hz. Las voces femeninas tienden a tener una frecuencia media más alta, pero debido a diferencias en articulación o la grabación de los audios los hombre pueden presentar frecuancias medias más altas. En terminos de brillo, las mujeres tuvieron un rango de 0.029-0.042, y lo hombre tuvieron un rango de 0.012-0.053. Las voces femeninas tienden a tener un brillo más alto por tener voces más agudas, sin embargo la pronunciación más fuerte puede hacer que las voces masculinas tengan un brillo más alto. Continunado, en la intensidad las mujeres tuvieron un rango más amplio de 7500000-36000000. Por otro lado, los hombres obtuvieron un rango de 10000000-14000000. En este laboratorio, no se presencio una tendencia clara dividida por sexo, ya que esta intensidad puede depender de la distancias entre el telefono y la persona durante la grabación además del esfuerzo al hablar.
 
 **Conclusiones sobre el comportamiento de la voz en hombres y
 mujeres a partir de los análisis realizados.**
+
 
 
 **Importancia clínica del jitter y shimmer en el análisis de la voz.**
