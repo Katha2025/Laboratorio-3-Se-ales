@@ -361,7 +361,15 @@ Entre los audios de los hombres, la frecuencia media tiende a ser mucho más var
 **Conclusiones sobre el comportamiento de la voz en hombres y
 mujeres a partir de los análisis realizados.**
 
+A partir de lo establecido antes, se podría decir que la frecuencia fundamental es consistentemente mayor en las voces femeninas (220-496 Hz), a comparación de las masculinas (213-234 Hz). Esto es consistente con la fisiología de las cuerdas vocales, ya que las mujeres tienen cuardas vocales más cortas y delgadas, lo cuál causa que haya una vibración más rapida, por ende tienen una frecuencia fundamental más rápida. En contraste, los hombre presentan frecuencias fundamentales más bajas, demostrando una vibración más lenta.
 
+Además, se visualizó que la frecuancia media del espectro varía más en hombres que en mujeres, indicando una mayor variabilidad en la articulación de palabras. La mujeres, por otra parte, tuvieron valores más concentrados dentro de un rango menor, lo que indica a mayor homgeneidad vocal. 
+
+En adición, el brillo a pesar de que las voces femeninas tienden a ser más "brillantes" por ser más agudas, en este labooratorio se observó como las voces masculinas también pueden alcanzar valores altos debido a la ponunciación más fuerte.
+
+Por ultimo, la intensidad no presentó una tendencia clara dependiendo de los sexos, ya que esta puede depender de valores externos cómo la distancia entre el emisor y el micrófono, y el esfuerzo del habla.
+
+Para concluir, los resultados se alinean en gran parte con las diferencias anatómicas y fisiológicas entre las voces masculinas y femeninas. Estas diferencias influyen directamente con la frecuencia fundamental y media, mientras que el brillo e intensidad muestran mayor variabilidad según las condiciones de grabación y enunciación.
 
 **Importancia clínica del jitter y shimmer en el análisis de la voz.**
 
