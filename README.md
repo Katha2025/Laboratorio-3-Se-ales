@@ -356,7 +356,7 @@ Finalmente, en esta parte se compararon los resultados obtenidos entre las voces
 
 
 **¿Qué diferencias se observan en la frecuencia fundamental?**
-
+De acuerdo con los resultados obtenidos, las voces femeninas presentan frecuencias fundamentales más elevadas en comparación con las voces masculinas, lo que evidencia una clara diferencia tonal entre ambos grupos. En las mujeres, los valores de la frecuencia fundamental oscilan entre aproximadamente 220 Hz y 496 Hz, mientras que en los hombres se sitúan entre 213 Hz y 234 Hz. Esta variación se debe a factores fisiológicos, ya que las cuerdas vocales femeninas son más delgadas y cortas, lo que genera vibraciones más rápidas y, por consiguiente, tonos más agudos, en particular, la Mujer 1 presenta la frecuencia fundamental más alta (496.39 Hz), lo que refleja una voz especialmente aguda, seguida por la Mujer 3 con 361.26 Hz, mientras que la Mujer 2 se aproxima al rango masculino con un valor de 220.81 Hz. Por otro lado, las voces masculinas mantienen frecuencias fundamentales muy similares entre sí, lo que indica una mayor estabilidad tonal en el rango grave.
 
 **¿Qué otras diferencias notan en términos de brillo, media o intensidad?**
 
